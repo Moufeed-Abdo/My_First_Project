@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Access Records</title>
+    <link rel="stylesheet" href="{% static "first_app/css/mystyle.css" %}"/>
+  </head>
+  <body>
+    <h1>Hi, this is a list of webpages!</h1>
+    {% if access_records %}
+      <table>
+        <thead>
+          <th>site name</th>
+          <th>date accessed</th>
+        </thead>
+      {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+      {% endfor %}
+
+      </table>
+    {% endif %}
+
+  </body>
+</html>
