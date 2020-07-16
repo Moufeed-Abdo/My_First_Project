@@ -1,0 +1,27 @@
+{% extends "Mainapp_temp/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1>قائمة أسماء الطلاب</h1>
+        <table>
+            <thead>
+              <th>اسم الطالب</th>
+              <th>العمر</th>
+              <th>العنوان</th>
+              <th>الايميل</th>
+            </thead>
+
+          {% for student in student_list.all %}
+              <tr>
+                <td>{{student.name}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.address}}</td>
+                <td>{{student.email}}</td>
+              </tr>
+          {% endfor %}
+
+        </table>
+
+</div>
+
+{% endblock %}
